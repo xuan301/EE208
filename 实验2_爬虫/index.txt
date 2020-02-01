@@ -1,0 +1,10 @@
+http://www.sjtu.edu.cn	httpwww.sjtu.edu.cn
+https://news.sjtu.edu.cn/jdyw/20191001/111911.html	httpsnews.sjtu.edu.cnjdyw20191001111911.html
+https://news.sjtu.edu.cn/jdyw/20190926/111253.html	httpsnews.sjtu.edu.cnjdyw20190926111253.html
+https://mp.weixin.qq.com/s?__biz=MjM5MDIyMDQyMA==&mid=2650655182&idx=1&sn=e59dfc4a565699c29115d4786d81332c&chksm=be4140258936c9339efccf1ef49d019c56dea87024b8d6acecb90a8db74408a0ab0ebf2e0b96&mpshare=1&	httpsmp.weixin.qq.coms__bizMjM5MDIyMDQyMAmid2650655182idx1sne59dfc4a565699c29115d4786d81332cchksmbe4140258936c9339efccf1ef49d019c56dea87024b8d6acecb90a8db74408a0ab0ebf2e0b96mpshare1
+https://news.sjtu.edu.cn/jdyw/20190930/111755.html	httpsnews.sjtu.edu.cnjdyw20190930111755.html
+https://news.sjtu.edu.cn/jdyw/20190927/111465.html	httpsnews.sjtu.edu.cnjdyw20190927111465.html
+https://news.sjtu.edu.cn/jdyw/20190928/111553.html	httpsnews.sjtu.edu.cnjdyw20190928111553.html
+https://news.sjtu.edu.cn/jdyw/20190924/111073.html	httpsnews.sjtu.edu.cnjdyw20190924111073.html
+https://news.sjtu.edu.cn/jdyw/20190930/111887.html	httpsnews.sjtu.edu.cnjdyw20190930111887.html
+https://news.sjtu.edu.cn/jdyw/20190927/111459.html	httpsnews.sjtu.edu.cnjdyw20190927111459.html
