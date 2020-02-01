@@ -1,0 +1,47 @@
+$def with (a,name)
+
+<head>
+<style type="text/css">
+p
+{
+    background-color: white;
+border:red solid thin;
+outline:#00ff00 groove 5px;
+}
+a{
+	font-size:20px;
+}
+h1{
+    text-align :center;
+    }
+h3{
+    text-align :center;
+    }
+div.polaroid {
+  max-width: 100%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+}
+
+div.container {
+  padding: 10px 20px;
+}
+</style>
+</head>
+
+<h1>"$a" </h1><h3>Search Result</h3><br>
+
+$if name:
+    $for i in name:
+    	<div class="polaroid">
+                <div class="container">
+                    <a href="$i['url']">$i['title']</a><br>
+            		<em>$:i['keyword']</em><br>
+            		<em>$i['url']</em><br>
+                </div>
+        </div>
+
+
+$else:
+    <em>Hello</em>, world!

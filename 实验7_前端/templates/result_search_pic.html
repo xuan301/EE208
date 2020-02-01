@@ -1,0 +1,64 @@
+$def with (a,name)
+
+<head>
+<style type="text/css">
+body {margin:25px;}
+p
+{
+    background-color: white;
+border:red solid thin;
+outline:yellow groove 5px;
+}
+h1{
+    text-align :center;
+    }
+h3{
+    text-align :center;
+    }
+img {
+    width: 100%;
+    height: auto;
+    margin:0;
+    padding:0;
+}
+div.polaroid {
+  max-width: 80%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+}
+
+div.container {
+  text-align: center;
+  padding: 10px 20px;
+}
+div.waterfall-container {
+    column-count: 2;
+    column-gap: 0;
+  }
+
+div.waterfall-item {
+    break-inside: avoid;
+  }
+</style>
+</head>
+
+<h1>"$a" </h1><h3>搜索结果</h3><br>
+
+<center>
+<div class="waterfall-container">
+$if name:
+    $for i in name:
+        <div class="waterfall-item" v-for="i in 100">
+            <div class="polaroid">
+                <img src="$i['imgurl']" />
+                <div class="container">
+                    <a href="$i['url']">$i['title']</a><br>
+                </div>
+            </div>
+        </div>
+        
+$else:
+    <em>Hello</em>, world!
+</div>
+</center>
