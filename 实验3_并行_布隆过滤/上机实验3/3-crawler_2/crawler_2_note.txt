@@ -1,0 +1,56 @@
+
+Before trying the following methods, you should make sure it is the "join" problem, not others like "while True".
+
+1) Use the thread instead of the queue to join. 
+
+-----------------------------------------------
+# define the threading pool
+NUM = 1
+threads = []
+varLock = threading.Lock()
+for i in range(NUM):
+    t = threading.Thread(target=working)
+    t.setDaemon(True)
+    threads.append(t)
+	
+# start each thread
+for t in threads:
+    t.start()
+	
+# join threads
+for t in threads:
+    t.join() 
+-----------------------------------------------
+
+2) If you use queue to join, make sure that q.task_done() have been executed N times, where N is the number of elements you put into 
+the queue. There is a counter in the task_done() to record the number of remaining tasks in the queue, which is used to triger the end 
+of join() function when it is zero.
+
+-----------------------------------------------
+page = q.get()
+if page not in crawled:
+    #.......
+    q.task_done()
+else:
+    q.task_done()
+-----------------------------------------------
+
+
+3) If you empty the queue (i.e., q.queue.clear()) to clear the remaining tasks (the task number > 0), then using queue to join will be stucked 
+and the script will never end naturally. You can use method 1) to avoid this case, or else you have to add a new function to the Class Queue in 
+the python library like follows,
+
+-----------------------------------------------
+def clear(self):
+    self.all_tasks_done.acquire()
+    try:
+        self.queue.clear()
+        self.unfinished_tasks = 0
+        self.all_tasks_done.notify_all()
+    finally:
+        self.all_tasks_done.release()
+-----------------------------------------------
+
+Above function could be added to the Queue class in the file Queue.py in your python library. Then you can use q.clear() instead of q.queue.clear() 
+to clear the remaining tasks, and the script would end naturally. It seems to be a bug that q.join() dose not consider the q.queue.clear() behavior 
+in this Class.
